@@ -1,0 +1,11 @@
+{% autoescape off %}
+
+Hi {{user.first_name}}
+
+Your ORDER Has been received!
+
+Order number: {{order.order_number}}
+Total: {{order.total}}
+Date placed: {{order.date}}
+
+{% endautoescape %}

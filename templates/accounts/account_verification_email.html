@@ -1,0 +1,12 @@
+{% autoescape off %}
+
+Hi {{user.first_name}},
+
+Welcome to Vivero Verde where all your green needs are message.
+
+Please click on below link to confirm your registration and activate your account:
+
+http://{{domain}}{% url 'activate' uidb64=uid token=token %}
+
+If you have not registerd with us please ignore this email.
+{% endautoescape %}
