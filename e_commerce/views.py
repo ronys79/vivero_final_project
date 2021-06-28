@@ -6,6 +6,7 @@ def home(request):
     products = Product.objects.all().filter(is_available=True).order_by('-created_date')
     products = sorted(products, key=lambda prod:prod.averageReview, reverse=True)
 
+    reviews = None
     for product in products:
     # Get the reviews
         reviews = ReviewRating.objects.filter(product_id=product.id, status=True)
