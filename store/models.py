@@ -60,8 +60,8 @@ class Variation(models.Model):
     variation_description   = models.CharField(max_length=100)
     is_active               = models.BooleanField(default=True)
     created_date            = models.DateTimeField(auto_now=True)
-    price                 = models.IntegerField()
-    stock                 = models.IntegerField(default=0)
+    price                   = models.IntegerField()
+    stock                   = models.IntegerField(default=0)
     stock                   = models.IntegerField(default=0)
 
     objects = VariationManager()

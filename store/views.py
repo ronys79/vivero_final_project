@@ -12,6 +12,7 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from .forms import ReviewForm
 from django.contrib import messages
 from orders.models import OrderProduct
+import json
 
 
 def store(request, category_slug=None):
@@ -82,7 +83,10 @@ def product_detail(request, category_slug, product_slug):
         'orderproduct': orderproduct,
         'reviews': reviews,
         'product_gallery': product_gallery,
+        'product_json': json.dumps(list(single_product.variation_set.all().values('id', 'price', 'stock', 'variation_description'))),
+
     }
+    print(context['product_json'])
     return render(request, 'store/product_detail.html', context)
 
 def search(request):
